@@ -56,7 +56,8 @@ export async function createApp(
   const configured =
     options.configured ??
     Boolean(
-      process.env.BACKBOARD_API_KEY &&
+      process.env.LIVE_AI_ENABLED !== "false" &&
+        process.env.BACKBOARD_API_KEY &&
         process.env.BROWSERBASE_API_KEY &&
         (!production || process.env.SESSION_SECRET?.length! >= 32),
     );
@@ -106,19 +107,15 @@ export async function createApp(
         /* Missing and opaque origins are rejected. */
       }
       if (!sameOrigin && !devOrigin)
-        return reply
-          .code(403)
-          .send({
-            error: "Open Choreseed in its own tab and try again.",
-            code: "origin",
-          });
+        return reply.code(403).send({
+          error: "Open Choreseed in its own tab and try again.",
+          code: "origin",
+        });
       if (!req.headers["content-type"]?.startsWith("application/json"))
-        return reply
-          .code(415)
-          .send({
-            error: "Use an application/json request.",
-            code: "content_type",
-          });
+        return reply.code(415).send({
+          error: "Use an application/json request.",
+          code: "content_type",
+        });
     }
   });
   function identity(req: any, reply: any) {
@@ -147,6 +144,11 @@ export async function createApp(
   app.get("/healthz", async () => ({ ok: true, app: "choreseed" }));
   app.get("/api/status", async () => ({
     liveConfigured: configured,
+    livePauseReason: configured
+      ? null
+      : process.env.LIVE_AI_ENABLED === "false"
+        ? "Live generation is paused until persistent hosting is available. The fictional sample and saved routines still work."
+        : "Live AI is paused while server credentials are configured. The fictional sample and saved routines still work.",
     model: MODEL,
     supportedHosts: HOSTS,
     ...ledger.status(),
@@ -219,22 +221,18 @@ export async function createApp(
         .code(error.code === "not_configured" ? 503 : 502)
         .send({ error: error.message, code: error.code });
     if (error instanceof z.ZodError)
-      return reply
-        .code(400)
-        .send({
-          error:
-            "Check the request fields and limits. Only column names, instructions, clarification and selected reference excerpts are accepted.",
-          code: "validation",
-        });
-    const large = (error as { statusCode?: number }).statusCode === 413;
-    return reply
-      .code(large ? 413 : 400)
-      .send({
-        error: large
-          ? "This request is too large. Shorten instructions or excerpts."
-          : "The request could not be processed. Check column names, source URLs and input format.",
-        code: "request",
+      return reply.code(400).send({
+        error:
+          "Check the request fields and limits. Only column names, instructions, clarification and selected reference excerpts are accepted.",
+        code: "validation",
       });
+    const large = (error as { statusCode?: number }).statusCode === 413;
+    return reply.code(large ? 413 : 400).send({
+      error: large
+        ? "This request is too large. Shorten instructions or excerpts."
+        : "The request could not be processed. Check column names, source URLs and input format.",
+      code: "request",
+    });
   });
   const staticRoot = resolve("dist/web");
   if (existsSync(staticRoot)) {

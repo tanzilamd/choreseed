@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-10-21T18:25:14.008Z",
+  "kind": "scripted synthetic real-integration journey; local app, hosted providers",
+  "stages": [
+    {
+      "stage": "source-read",
+      "elapsedMs": 35738
+    }
+  ],
+  "firstOutput": "\"Name\",\"Email\",\"Customer ID\"\r\n\"Maya Khan\",\"maya@example.com\",\"0012\"\r\n\"Sami Roy\",\"sami@example.com\",\"0007\"\r\n\"No email\",\"\",\"0009\"\r\n\"Another no email\",\"\",\"0010\"",
+  "scriptedSetupIncludingSourceClarificationReviewMs": 118724,
+  "secondOutput": "\"Customer ID\",\"Email\",\"Name\"\r\n\"0021\",\"rina@example.com\",\"Rina Das\"\r\n\"0023\",\"lee@example.com\",\"Lee Park\"",
+  "scriptedReplayMs": 194,
+  "repeatCompileCalls": 0,
+  "compileCalls": 2,
+  "rawRowsAbsentFromRequests": true,
+  "passed": true,
+  "frames": 86,
+  "durationMs": 120061,
+  "independentExpectedRowsVerified": true
+}

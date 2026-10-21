@@ -151,3 +151,29 @@ test("SSRF URL boundaries block private destinations, non-HTTPS and deceptive ho
     "https://docs.python.org/3/",
   );
 });
+
+test("a free preview cannot enable paid inference when persistent hosting is disabled", async () => {
+  const previous = process.env.LIVE_AI_ENABLED;
+  process.env.LIVE_AI_ENABLED = "false";
+  const app = await createApp({ ledger: new Ledger(":memory:") });
+  try {
+    const status = (await app.inject("/api/status")).json();
+    assert.equal(status.liveConfigured, false);
+    assert.match(status.livePauseReason, /persistent hosting/);
+    assert.equal(
+      (
+        await app.inject({
+          method: "POST",
+          url: "/api/recipes/compile",
+          headers,
+          payload,
+        })
+      ).statusCode,
+      503,
+    );
+  } finally {
+    await app.close();
+    if (previous === undefined) delete process.env.LIVE_AI_ENABLED;
+    else process.env.LIVE_AI_ENABLED = previous;
+  }
+});

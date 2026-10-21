@@ -378,11 +378,16 @@ function App() {
             target="_blank"
             rel="noreferrer"
           >
-            Source ↗
+            Source →
           </a>
         </nav>
       </header>
       <main>
+        {status && !status.liveConfigured && !offline && (
+          <div className="banner" role="status">
+            {status.livePauseReason}
+          </div>
+        )}
         {offline && (
           <div className="banner">
             You’re offline. Saved routines work locally; live AI and source
@@ -421,7 +426,7 @@ function App() {
                 </p>
                 <div className="hero-actions">
                   <button className="primary" onClick={reset}>
-                    Create a routine <span>↗</span>
+                    Create a routine <span>→</span>
                   </button>
                   <button className="secondary" onClick={() => void sample()}>
                     Try a fictional sample →
@@ -757,9 +762,8 @@ function App() {
                   </p>
                   {status && !status.liveConfigured && (
                     <p className="warning">
-                      Live AI is paused while service credentials are
-                      configured. The fictional sample and saved routines remain
-                      available.
+                      {status.livePauseReason ||
+                        "Live AI is paused while service credentials are configured."}
                     </p>
                   )}
                 </section>
@@ -1001,7 +1005,7 @@ function App() {
                       <strong>{s.id}</strong>: {s.label}{" "}
                       {s.url && (
                         <a href={s.url} target="_blank" rel="noreferrer">
-                          Open ↗
+                          Open →
                         </a>
                       )}
                     </p>
