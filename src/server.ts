@@ -161,7 +161,9 @@ export async function createApp(
   app.post("/api/recipes/compile", async (req, reply) => {
     if (!configured)
       throw new ProviderError(
-        "Live AI is paused: service credentials are not configured. Use the fictional sample or a saved routine.",
+        process.env.LIVE_AI_ENABLED === "false"
+          ? "Live AI is paused until persistent hosting is available. Use the fictional sample or a saved routine."
+          : "Live AI is paused: service credentials are not configured. Use the fictional sample or a saved routine.",
         "not_configured",
       );
     const body = CompileInput.parse(req.body);
@@ -192,7 +194,9 @@ export async function createApp(
   app.post("/api/sources/read", async (req, reply) => {
     if (!configured)
       throw new ProviderError(
-        "Public browser reading is paused: service credentials are not configured. Paste relevant notes instead.",
+        process.env.LIVE_AI_ENABLED === "false"
+          ? "Public browser reading is paused until persistent hosting is available. Paste relevant notes instead."
+          : "Public browser reading is paused: service credentials are not configured. Paste relevant notes instead.",
         "not_configured",
       );
     const body = z

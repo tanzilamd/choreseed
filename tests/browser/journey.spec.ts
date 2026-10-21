@@ -87,6 +87,8 @@ test("fictional sample → edit → exact export → save → second-file replay
     ).flat(),
   );
   expect(cached.some((u) => u.startsWith("/api"))).toBe(false);
+  expect(cached).toContain("/");
+  expect(cached.some((u) => u.includes("csv.worker-") && u.endsWith(".js"))).toBe(true);
 });
 
 test("mocked clarification journey sends metadata only and discards stale paid responses", async ({

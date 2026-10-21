@@ -12,12 +12,13 @@ export default defineConfig({
           "/icon.svg",
           ...readdirSync("dist/web/assets").map((name) => "/assets/" + name),
         ];
+        const template = readFileSync("public/sw.js", "utf8");
+        const marker = /const ASSETS = \[\];?\s*\/\* ASSET_LIST \*\//;
+        if (!marker.test(template))
+          throw new Error("Service worker asset marker is missing.");
         writeFileSync(
           "dist/web/sw.js",
-          readFileSync("public/sw.js", "utf8").replace(
-            "[] /* ASSET_LIST */",
-            JSON.stringify(assets),
-          ),
+          template.replace(marker, `const ASSETS = ${JSON.stringify(assets)};`),
         );
       },
     },
