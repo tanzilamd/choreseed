@@ -6,9 +6,16 @@
   "url": "https://choreseed.onrender.com",
   "auto_deploy": "off",
   "render_deployment_status": "live",
-  "source_commit": "6d9582fa8ecc71c3a064ce10d2c7f77cd90c669a",
+  "source_commit": "1868c1e18b4cfa9196b26a935b7bf15919e0b4ef",
   "paid_creation_rejected_http": 402,
   "public_smoke": "blocked by managed egress; exact hostname saved in draft but not applied",
   "live_ai_enabled": false,
-  "runtime_keys": "owner provisioning pending"
+  "runtime_keys": "owner provisioning pending",
+  "deployment_id": "dep-dbcgf5o473hc738tnen0",
+  "runtime_group_key_presence": {
+    "BACKBOARD_API_KEY": false,
+    "BROWSERBASE_API_KEY": false
+  },
+  "active_cloud_spec_revision": "3",
+  "deployment_host_in_active_policy": false
 }
