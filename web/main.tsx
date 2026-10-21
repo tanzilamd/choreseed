@@ -424,11 +424,19 @@ function App() {
                   <br />
                   Rehearse it once. Keep it for the next file.
                 </p>
-                <div className="hero-actions">
-                  <button className="primary" onClick={reset}>
+                <div
+                  className={`hero-actions${status?.liveConfigured === false ? " preview-actions" : ""}`}
+                >
+                  <button
+                    className={status?.liveConfigured === false ? "secondary" : "primary"}
+                    onClick={reset}
+                  >
                     Create a routine <span>→</span>
                   </button>
-                  <button className="secondary" onClick={() => void sample()}>
+                  <button
+                    className={status?.liveConfigured === false ? "primary" : "secondary"}
+                    onClick={() => void sample()}
+                  >
                     Try a fictional sample →
                   </button>
                 </div>
@@ -457,6 +465,41 @@ function App() {
                 </span>
               </div>
             </div>
+            <section className="demo" aria-labelledby="demo-heading">
+              <p className="eyebrow">WATCH / 85 SECONDS</p>
+              <h2 id="demo-heading">One chore. A routine worth keeping.</h2>
+              <p>
+                Watch the recorded workflow with real hosted AI and public-source reading.
+                The contacts are fictional; playback condenses a roughly two-minute run.
+              </p>
+              <video
+                controls
+                playsInline
+                preload="none"
+                poster="/demo-poster.png"
+                aria-label="Recorded Choreseed workflow with fictional contacts"
+                aria-describedby="demo-description"
+              >
+                <source src="/demo.webm" type="video/webm" />
+                <a href="/demo.webm">Download the 85-second demonstration</a>.
+              </video>
+              <p className="quiet" id="demo-description">
+                Silent video with on-screen explanations. Recorded in the development app with real integrations.
+                The free public preview currently supports the sample and local routine replay.
+                {" "}<a href="/demo.webm" download="choreseed-demo.webm">Download video</a>.
+              </p>
+              <details>
+                <summary>Read the demo transcript</summary>
+                <ol>
+                  <li>Upload fictional contacts and describe the cleanup. CSV rows stay in the browser.</li>
+                  <li>Read a public Python reference and review the selected excerpt.</li>
+                  <li>The model asks which duplicate key and keep rule to use. Choose Email and keep first.</li>
+                  <li>Review the routine, changed cells, and excluded rows. Download a new CSV and explicitly save the routine.</li>
+                  <li>Upload a second file with reordered columns. Replay the saved routine with zero new AI calls.</li>
+                </ol>
+                <p>Saved-routine replay also works offline after the app is cached; offline replay is verified separately from this recording. No human time-saving comparison was measured.</p>
+              </details>
+            </section>
             <section className="how" aria-label="How Choreseed works">
               <div>
                 <span>01 / EXPLAIN</span>

@@ -5,6 +5,31 @@ import { sampleCsv, sampleRecipe, secondCsv } from "../../src/shared/sample.js";
 import { execute } from "../../src/shared/engine.js";
 import { parseCsv } from "../../src/shared/csv.js";
 
+test("recorded real-integration demo plays and has a text alternative", async ({ page, request }) => {
+  const media = await request.get("/demo.webm", { headers: { Range: "bytes=0-1023" } });
+  expect(media.status()).toBe(206);
+  expect(media.headers()["content-type"]).toContain("video/webm");
+  expect((await media.body()).length).toBe(1024);
+  await page.goto("/");
+  const video = page.getByLabel("Recorded Choreseed workflow with fictional contacts");
+  await expect(video).toHaveAttribute("preload", "none");
+  const metadata = await video.evaluate(async (element) => {
+    const video = element as HTMLVideoElement;
+    await new Promise<void>((resolve, reject) => {
+      video.onloadedmetadata = () => resolve();
+      video.onerror = () => reject(new Error("Demo video could not be decoded"));
+      video.load();
+    });
+    await video.play();
+    video.pause();
+    return { duration: video.duration, width: video.videoWidth };
+  });
+  expect(metadata.duration).toBe(85);
+  expect(metadata.width).toBe(1280);
+  await page.getByText("Read the demo transcript", { exact: true }).click();
+  await expect(page.getByText("Upload a second file with reordered columns.", { exact: false })).toBeVisible();
+});
+
 test("fictional sample → edit → exact export → save → second-file replay → offline reload", async ({
   page,
   context,

@@ -247,6 +247,15 @@ export async function createApp(
           response.header("Cache-Control", "no-cache");
       },
     });
+    // Fixed public recording routes; user input never selects a filesystem path.
+    app.get("/demo.webm", (_req, reply) =>
+      reply
+        .type("video/webm")
+        .sendFile("choreseed-demo.webm", resolve("docs/assets")),
+    );
+    app.get("/demo-poster.png", (_req, reply) =>
+      reply.type("image/png").sendFile("start-desktop.png", resolve("docs/assets")),
+    );
     app.setNotFoundHandler((req, reply) =>
       req.url.startsWith("/api/")
         ? reply.code(404).send({ error: "Unknown API route." })

@@ -57,6 +57,7 @@ a {
 }
 button:focus-visible,
 a:focus-visible,
+video:focus-visible,
 summary:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
@@ -221,6 +222,31 @@ main {
 }
 .wide {
   width: 100%;
+}
+.preview-actions .secondary {
+  order: 2;
+}
+.demo {
+  padding: 28px;
+  margin-bottom: 48px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--cream);
+}
+.demo video {
+  display: block;
+  width: 100%;
+  max-height: 540px;
+  background: #263429;
+  border-radius: 8px;
+}
+.demo summary {
+  cursor: pointer;
+  color: var(--green);
+  font-weight: 600;
+}
+.demo details ol {
+  padding-left: 24px;
 }
 .quiet {
   color: var(--muted);
