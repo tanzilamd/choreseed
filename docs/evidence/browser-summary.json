@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-21T18:20:06.769Z",
+  "runner": "Playwright + system Chromium; fictional fixtures and mocked AI routes",
+  "stats": {
+    "startTime": "2026-10-21T18:20:06.769Z",
+    "duration": 7556.632,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "checks": [
+    "exact preview/download bytes",
+    "editable steps",
+    "explicit IndexedDB save",
+    "second compatible file with zero inference",
+    "offline reload and replay",
+    "no API response caching",
+    "raw-row sentinel absent from compile payload",
+    "stale response discard",
+    "desktop/mobile WCAG AA automated checks",
+    "keyboard focus",
+    "no horizontal page overflow",
+    "schema recovery",
+    "untrusted cell text rendering"
+  ]
+}

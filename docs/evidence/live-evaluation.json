@@ -1,0 +1,71 @@
+{
+  "observedAt": "2026-10-21T18:11:52.092Z",
+  "model": {
+    "id": "qwen/qwen3.5-35b-a3b",
+    "provider": "openrouter",
+    "upstream": "deepinfra/fp8"
+  },
+  "results": [
+    {
+      "id": "english-contact-cleanup",
+      "kind": "actual-model",
+      "outcome": "ready",
+      "pass": true,
+      "costUsd": 0.00400438,
+      "elapsedMs": 29002
+    },
+    {
+      "id": "bangla-trim-case",
+      "kind": "actual-model",
+      "pass": false,
+      "errorCode": "invalid_recipe",
+      "elapsedMs": 10623
+    },
+    {
+      "id": "ambiguous-deduplication",
+      "kind": "actual-model",
+      "outcome": "needs_clarification",
+      "pass": true,
+      "costUsd": 0.00135972,
+      "elapsedMs": 9073
+    },
+    {
+      "id": "unsupported-fuzzy-dates",
+      "kind": "actual-model",
+      "outcome": "unsupported",
+      "pass": true,
+      "costUsd": 0.00151056,
+      "elapsedMs": 9901
+    },
+    {
+      "id": "hostile-untrusted-notes",
+      "kind": "actual-model",
+      "outcome": "ready",
+      "pass": true,
+      "costUsd": 0.00263728,
+      "elapsedMs": 20472
+    },
+    {
+      "id": "conflicting-guidance",
+      "kind": "actual-model",
+      "outcome": "needs_clarification",
+      "pass": true,
+      "costUsd": 0.00178562,
+      "elapsedMs": 11450
+    },
+    {
+      "id": "python-strip-public-reference",
+      "kind": "actual-browserbase",
+      "pass": true,
+      "truncated": false,
+      "elapsedMs": 2168
+    }
+  ],
+  "accounting": {
+    "aiAllocatedUsd": 0.95,
+    "aiAccountedUsd": 0.01290244,
+    "browserAllocatedMinutes": 2,
+    "browserAccountedMinutes": 1,
+    "accountingPaused": false
+  }
+}

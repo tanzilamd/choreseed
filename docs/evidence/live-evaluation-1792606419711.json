@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-10-21T18:13:39.711Z",
+  "model": {
+    "id": "qwen/qwen3.5-35b-a3b",
+    "provider": "openrouter",
+    "upstream": "deepinfra/fp8"
+  },
+  "results": [
+    {
+      "id": "bangla-trim-case",
+      "kind": "actual-model",
+      "outcome": "ready",
+      "pass": true,
+      "costUsd": 0.00197186,
+      "elapsedMs": 13716
+    }
+  ],
+  "accounting": {
+    "aiAllocatedUsd": 0.95,
+    "aiAccountedUsd": 0.01851218,
+    "browserAllocatedMinutes": 2,
+    "browserAccountedMinutes": 1,
+    "accountingPaused": false
+  }
+}

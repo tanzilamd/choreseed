@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-21T18:12:42.765Z",
+  "model": {
+    "id": "qwen/qwen3.5-35b-a3b",
+    "provider": "openrouter",
+    "upstream": "deepinfra/fp8"
+  },
+  "results": [
+    {
+      "id": "bangla-trim-case",
+      "kind": "actual-model",
+      "pass": false,
+      "errorCode": "invalid_recipe",
+      "costUsd": 0.00363788,
+      "syntheticResponse": "{\"outcome\":\"ready\",\"title\":\"Trim Name and Lowercase Email\",\"operations\":[{\"type\":\"trim\",\"column\":\"Name\",\"references\":[\"Name কলামের শুরু ও শেষের ফাঁকা জায়গা বাদ দাও।\"]},{\"type\":\"lowercase\",\"column\":\"Email\",\"references\":[\"Email কলামের অক্ষরগুলো ছোট হাতের করো।\"]}],\"assumptions\":[]}",
+      "diagnosis": "A step cites an unknown source.",
+      "elapsedMs": 23141
+    }
+  ],
+  "accounting": {
+    "aiAllocatedUsd": 0.95,
+    "aiAccountedUsd": 0.01654032,
+    "browserAllocatedMinutes": 2,
+    "browserAccountedMinutes": 1,
+    "accountingPaused": false
+  }
+}
