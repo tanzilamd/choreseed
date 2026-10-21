@@ -4,6 +4,10 @@
 
 Built for the [Hacktoberfest Open-Source AI Challenge, Week 3: Slow and Steady](https://dev.to/challenges/hacktoberfest-week3-2026-10-19). This is an early release, not a general spreadsheet or arbitrary-code agent. All demo contacts are fictional.
 
+[Free public preview](https://choreseed.onrender.com) · [85-second real-integration recording](docs/assets/choreseed-demo.webm) · [Delivery status](docs/DELIVERY.md)
+
+**Live AI is deliberately paused in the free preview.** Paid persistent Render hosting returned HTTP 402 requiring payment information; the owner's no-new-card constraint is preserved. Local real-provider creation and browser-local replay are verified. Full public production acceptance remains blocked; see the delivery record.
+
 ## What works
 
 - Contact CSVs: UTF-8 with optional BOM, comma/semicolon detection and override, 2 MB / 10,000 rows / 50 columns.

@@ -1,0 +1,14 @@
+{
+  "service_id": "srv-dbcg8rvb9u1s73cnpgn0",
+  "plan": "free",
+  "disk_present": false,
+  "health_check": "/healthz",
+  "url": "https://choreseed.onrender.com",
+  "auto_deploy": "off",
+  "render_deployment_status": "live",
+  "source_commit": "6d9582fa8ecc71c3a064ce10d2c7f77cd90c669a",
+  "paid_creation_rejected_http": 402,
+  "public_smoke": "blocked by managed egress; exact hostname saved in draft but not applied",
+  "live_ai_enabled": false,
+  "runtime_keys": "owner provisioning pending"
+}

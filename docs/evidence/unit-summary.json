@@ -1,0 +1,9 @@
+{
+  "command": "npm test",
+  "node": "24.19.0",
+  "tests": 22,
+  "passed": 22,
+  "failed": 0,
+  "skipped": 0,
+  "description": "Actual Node test runner completion; independent deterministic, API mocks, compiler validation and persistent accounting fixtures."
+}
