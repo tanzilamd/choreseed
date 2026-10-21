@@ -1,0 +1,6 @@
+{
+  "kind": "local browser check with mocked paused status",
+  "paidCompileButtonDisabled": true,
+  "fictionalSampleWorks": true,
+  "compileRequests": 0
+}

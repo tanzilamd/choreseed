@@ -694,7 +694,7 @@ function App() {
                       {sources.some((s) => s.kind === "url") && (
                         <button
                           className="secondary"
-                          disabled={Boolean(busy) || !consent || offline}
+                          disabled={Boolean(busy) || !consent || offline || status?.liveConfigured === false}
                           onClick={() => void fetchReferences()}
                         >
                           Read public URLs
@@ -747,6 +747,7 @@ function App() {
                       !consent ||
                       Boolean(busy) ||
                       offline ||
+                      status?.liveConfigured === false ||
                       (questions.length > 0 && !answer.trim())
                     }
                     onClick={() => void compileRoutine()}
