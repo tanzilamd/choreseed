@@ -6,9 +6,14 @@
   "path": "/tanzil_ahmed_e6a826eee8c4/choreseed-make-the-chore-leave-behind-a-routine-1hki-temp-slug-6815925",
   "published": false,
   "published_at": null,
-  "tags": "devchallenge, hf26challenge, opensource, ai",
-  "body_sha256": "5723b58b1261b1bdf6aa5c11203ed15fd476b725046b56f1c424e8621f080f6d",
-  "saved_at": "2026-10-21T19:09:05.653874+00:00",
+  "tags": [
+    "devchallenge",
+    "hf26challenge",
+    "opensource",
+    "ai"
+  ],
+  "body_sha256": "42bb583f681d07367533a4d1ef5774d9bc48d48c48246615781092fa0bd669be",
+  "saved_at": "2026-10-21T19:36:47.761879+00:00",
   "confirmed_in_unpublished_list": true,
   "requested_published": false,
   "publication_state": "confirmed_unpublished",

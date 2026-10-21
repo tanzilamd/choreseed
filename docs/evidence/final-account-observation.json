@@ -1,0 +1,12 @@
+{
+  "browserbase": {
+    "browserMinutes": 12,
+    "proxyBytes": 0
+  },
+  "backboard": {
+    "paid_credit_usd": 4.968007,
+    "free_credit_usd": 5.0,
+    "auto_reload_enabled": false
+  },
+  "observed_at": "2026-10-21T19:35:08.108464+00:00"
+}

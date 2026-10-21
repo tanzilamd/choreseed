@@ -1,92 +1,88 @@
-*This is a submission draft for the [Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady](https://dev.to/challenges/hacktoberfest-week3-2026-10-19).*
-
-> Delivery note before publication: The free public preview supports the fictional sample, editable rehearsal, exact CSV export, browser-local save, and replay with a second compatible file. These public interactions have been checked, including through Browserbase. Live generation remains paused: Render's paid persistent service requires payment information (HTTP 402), and the free Postgres provisioning API is blocked by Cloudflare (HTTP 403). Runtime keys are present in the dedicated environment group. No card was added and paid inference was not enabled on ephemeral storage. This remains an unpublished draft; full live production acceptance is incomplete.
+*This is a submission for the [Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady](https://dev.to/challenges/hacktoberfest-week3-2026-10-19).*
 
 ## What I Built
 
-I can collect a lot of advice before I start something: websites, videos, AI conversations, another promising explanation. The pile grows faster than my confidence about what to do with it.
+Before I start something, I tend to collect advice: websites, videos, AI conversations, one more explanation. Then I spend my energy deciding which pieces apply and where to begin.
 
-For this challenge, I chose one small place to stop collecting and start rehearsing: cleaning a contact CSV.
+For this challenge, I picked one small chore: cleaning a contact CSV. I wanted the effort of figuring it out to leave behind something I could use again.
 
-**Choreseed turns instructions and selected guidance into a routine you can inspect, keep, and run again.** The useful thing left behind is not another conversation. It is a little portable plan.
+**Choreseed turns ordinary instructions and selected guidance into a routine you can inspect, rehearse, save, and replay.**
 
-The intended user is someone who needs to tidy a customer or contact list without writing code: a freelancer, an individual, or a small team. This is a deliberately narrow first release. It trims selected fields, changes letter case when asked, renames columns, removes completely empty rows, and deduplicates by an explicit key and keep rule.
+It is for individuals, freelancers, and small teams who need to tidy contact or customer lists without writing code. The first release handles selected-field trimming, explicit case changes, column renaming, completely empty rows, and deduplication with an explicit key and keep rule.
 
-The contacts in the demo are fictional. My research fatigue is the real starting point; I am not claiming this fictional list is a personal daily workflow or that other people have adopted the app.
+The useful part happens on the next file: load the saved routine, choose a compatible CSV, and run it. No new prompt or inference.
 
 ## Demo
 
-- [Free public preview](https://choreseed.onrender.com) — sample, editing, export, save, and replay checked publicly; live AI awaits persistent usage storage. Free hosting can sleep between visits.
-- [85-second recorded real-integration demonstration](https://github.com/tanzilamd/choreseed/blob/main/docs/assets/choreseed-demo.webm).
+**[Watch the 85-second real-integration recording](https://choreseed.onrender.com/demo.webm)** · [GitHub video mirror](https://github.com/tanzilamd/choreseed/blob/main/docs/assets/choreseed-demo.webm)
 
-The recording uses the local development app, real Backboard inference, and real Browserbase reading. It condenses a roughly two-minute automated fictional journey into sampled playback; it is not a real-time human usability measurement.
+**[Try the free preview](https://choreseed.onrender.com)** — choose **Try a fictional sample**, edit its steps, download the output, and save the routine. A video and text transcript are on the home page.
 
-![The Choreseed rehearsal workbench, with fictional contacts and editable steps](https://raw.githubusercontent.com/tanzilamd/choreseed/main/docs/assets/workbench-desktop.png)
+The recording uses the development app with **real Backboard inference and real Browserbase reference reading**. Its contacts are fictional, and playback condenses a roughly two-minute scripted run. My research fatigue is real; the demo is not a claim about personal CSV usage, customers, or human time saved.
 
-Here is the moment I wanted to earn:
+**Current hosting limit:** live AI creation and public-source reading are paused in the free preview until usage accounting has durable storage. The sample, imported routines, and local replay work. The recording demonstrates the full creation workflow; it is separate from the deployed preview. Free hosting can sleep between visits.
 
-1. Give it a messy contact CSV and a plain-language instruction.
-2. Let it ask which duplicate key to use and whether to keep the first or last occurrence.
-3. Review the ordered steps, actual changed cells, and excluded rows.
-4. Download a new CSV and explicitly save the routine.
-5. Choose the next compatible file. Run the same routine. **No new prompt and no new inference.**
+![Editable steps, before-and-after contacts, and an audit of actual changes. All contacts are fictional.](https://raw.githubusercontent.com/tanzilamd/choreseed/main/docs/assets/workbench-desktop.png)
 
-The second file even has its columns in a different order. The header set still has to match exactly; Choreseed blocks schema drift instead of silently remapping fields.
+The recording starts with this instruction:
+
+> Trim Name and Email. Lowercase Email. Remove completely empty rows and duplicate contacts.
+
+“Duplicate contacts” leaves a decision unresolved. The model asks which key and which occurrence to keep. I answer: **Email, keep first; keep blank Email keys separate.**
+
+After review, six fictional input rows become four output rows. Leading-zero IDs stay strings. Two rows with missing emails survive separately. The original file stays untouched.
+
+Then a second file arrives with the same headers in a different order. The saved routine handles it with **zero additional AI calls**. A changed header set is blocked, rather than silently remapped.
 
 ## Code
 
 {% github tanzilamd/choreseed %}
 
-The original application code is MIT licensed. [Setup](https://github.com/tanzilamd/choreseed/blob/main/docs/SETUP.md), [privacy and limitations](https://github.com/tanzilamd/choreseed/blob/main/docs/PRIVACY.md), [attribution](https://github.com/tanzilamd/choreseed/blob/main/THIRD_PARTY_NOTICES.md), and [test evidence](https://github.com/tanzilamd/choreseed/tree/main/docs/evidence) are in the repository.
+Original code is **MIT licensed**. The repository includes [setup](https://github.com/tanzilamd/choreseed/blob/main/docs/SETUP.md), [privacy and limitations](https://github.com/tanzilamd/choreseed/blob/main/docs/PRIVACY.md), [model/dependency attribution](https://github.com/tanzilamd/choreseed/blob/main/THIRD_PARTY_NOTICES.md), and [actual evaluation evidence](https://github.com/tanzilamd/choreseed/tree/main/docs/evidence).
 
 ## How I Built It
 
-The model has one job: interpret the task and propose constrained data.
+The model interprets the task. Deterministic code changes the data.
 
-Instructions, column names, clarification, and selected reference excerpts go to a Fastify backend. Backboard calls the open-weight **Qwen3.5-35B-A3B** model through OpenRouter, pinned to the `deepinfra/fp8` upstream. Memory, web search, provider fallback, and automatic model routing are off.
+A React/TypeScript workbench sends instructions, column names, clarification, and selected reference excerpts to Fastify. Backboard calls the open-weight **[Qwen3.5-35B-A3B](https://huggingface.co/Qwen/Qwen3.5-35B-A3B)**, pinned through OpenRouter to `deepinfra/fp8`. Memory, web search, provider fallback, and automatic model routing are off.
 
-The model returns one of three outcomes: a clarification question, a preview-ready recipe, or an explanation that the request is outside the supported scope. Zod and additional semantic checks reject unknown columns, rename collisions, invented source IDs, unsupported steps, and arbitrary executable code.
+The result is a typed recipe, a necessary clarification, or an actionable unsupported-operation response. Zod and semantic validation reject unknown columns, rename collisions, invented reference IDs, unsupported steps, and executable code. “Ready” means ready to preview; the user still reviews it.
 
-The CSV itself stays in a browser Web Worker. PapaParse preserves strings, including leading zeros. Deterministic code applies the steps, computes the audit, and exports a new file. Saved recipes use IndexedDB only after an explicit save. Raw files are not persisted.
+The raw CSV stays in a browser Web Worker. PapaParse preserves strings. The interpreter applies ordered steps, computes changed cells and excluded rows, and exports a new CSV. Formula-like cells receive spreadsheet-safe escaping by default, visible in the preview. Explicit saves store recipes in IndexedDB, not raw files.
 
-Optional public references are read through bounded Browserbase sessions. The user can review and edit the selected excerpts before compilation. Three sources maximum; 4,000 characters per source; visible truncation; pasted notes for blocked content or permitted video transcripts. Fetched pages are untrusted data, not instructions to the agent.
+Browserbase reads supported public references in bounded, read-only sessions. Users review the excerpts before compilation: at most three sources and 4,000 characters per source, with visible truncation and a paste fallback. Source text is untrusted data. A citation ID existing does not establish that its source supports the proposed step.
 
-### A failure worth keeping
+### Two failures that improved the result
 
-I started with Qwen3-32B. It produced malformed JSON in one probe and weak Bangla results. I documented that outcome and tested a newer Apache-2.0 licensed open-weight model, rather than silently substituting a closed model.
+Qwen3-32B produced malformed output in an early probe and weak Bangla results. I documented the failure and tested an explicitly named replacement, rather than silently changing models.
 
-The newer model then hit a smaller, useful failure: its Bangla cleanup operations were correct, but it quoted the instruction sentences where the recipe required reference IDs. Validation rejected the result. I made the allowed IDs explicit in the prompt and reran the affected real case. It passed.
+The replacement then produced correct Bangla operations but put quoted instructions where reference IDs belonged. Validation rejected it. I made the allowed IDs explicit and reran the affected real case successfully.
 
-That distinction matters. A plausible answer is not yet a usable routine. And a valid citation ID still does not prove that its source supports the step: the workbench asks the user to review the guidance and the proposed behavior.
+A final public offline test also caught a build-marker bug: the service worker had an empty asset list. I fixed the injection, made a missing marker fail the build, redeployed, and repeated the public journey. Cached-app replay then passed. Both failures remain in the evidence.
 
-### Small boundaries do real work
+The backend implements conservative paid-request reservations and session/IP quotas in SQLite. Restart-persistence tests pass with a persistent local ledger. The free host has an ephemeral filesystem, so public live AI stays off; a free-database provisioning API block remains unresolved. Public live-AI quota persistence has **not** been verified.
 
-Empty dedupe keys are kept separately. Retained records keep their original order. Completely empty rows mean empty string values; whitespace disappears only where a trim step says so. Formula-like spreadsheet cells are escaped by default, with the actual escaping visible in the preview.
+## Why Does Open Innovation Matter?
 
-I stopped before fuzzy matching, date or currency calculations, joins, XLSX/PDF processing, and arbitrary Python or JavaScript. Each would make “review this small routine” a different promise.
+The Apache-2.0 open-weight model does the core semantic work: turning an English or Bangla instruction into a constrained plan. Its identity, weights, and license are available for inspection. Evaluating and explicitly replacing the first model was a real part of building the application.
 
-The intended public AI demo also needs durable accounting. SQLite records reservations before paid dispatch, including failed or uncertain attempts, and retains them across restarts. Limits are three attempts per anonymous session/day, three per IP/hour, and one pending inference. Pricing and native model limits are checked before dispatch; provider uncertainty does not become a supposed refund. The current free preview keeps live AI off because an ephemeral disk cannot uphold that promise.
+The recipe schema and MIT interpreter are also inspectable and modifiable. A user can export the routine as JSON, keep it, and run it again without buying another model response. That makes the result portable beyond the original AI conversation.
 
-## Why Open Innovation Matters
-
-The open-weight model performs the core semantic work. It turns an English or Bangla task into a structured plan; it is not merely a development assistant attached to a conventional cleaner.
-
-The other durable part is open too: the recipe format, validator, interpreter, and UI can be inspected, modified, and exported. A routine is not trapped in an AI chat. Once reviewed and saved, replay needs neither an inference provider nor a new model response.
-
-That is the tested offline capability: **cached app plus saved recipe plus compatible local CSV**. Creation still uses hosted inference. I am not calling it local inference, guaranteeing provider zero retention, or claiming model substitution/self-hosting has been tested.
+The tested offline capability is precise: **cached app + saved recipe + compatible local CSV**. Creation uses hosted inference. Local inference, self-hosted models, and provider zero retention are not claimed.
 
 ## The Lazy Payoff
 
-The strongest measurement is a count: **zero new inference calls on the second file**. The recorded journey checked that count, and both downloaded files matched independent expected rows. Public preview downloads also matched independent expected CSV bytes. Public browser checks replayed a saved routine after an offline reload and verified that API responses were absent from the static cache. That final public check caught a build-marker formatting bug that left the worker's asset list empty; I fixed the build injection, made a missing marker fail the build, redeployed, and reran the actual public journey successfully.
+The measured result is **zero new inference calls on the second compatible file**. Both recorded exports matched independent expected rows. Public downloads also matched independently written CSV bytes; public offline replay passed without caching API responses.
 
-The build has deterministic/API/accounting tests, separate browser journeys, and real-provider evaluation records. The real semantic cases include English contact cleanup, Bangla trim/case instructions, ambiguous duplicates, unsupported requests, hostile notes, and conflicting guidance. Failures and the targeted correction remain in the evidence.
+Validation includes **22 deterministic/API/compiler/accounting tests and five browser journeys**, plus real English/Bangla model cases and real reference reading. Fictional samples, mocked failures, and actual provider results are identified separately.
 
-I have not measured a matched manual baseline or human review time. The setup still asks for care. Choreseed's hypothesis is that the care can leave behind something reusable, instead of being spent again on the next file.
+I have not measured a matched manual baseline or human review time. First setup still takes care: source reading, clarification, provider waits, and review all count. The hypothesis is that this care can leave behind a reusable routine, instead of being spent again on the next file.
 
-Slow and steady, with a smaller chore waiting tomorrow.
+That is my version of “Slow and Steady”: do the deciding once, keep the small routine, and bring it the next file.
 
 ## Prize Categories
 
-The implementation meaningfully uses Backboard for open-weight semantic compilation and Browserbase for public reference reading. Those are the partner categories I would enter after final readiness review. Render currently hosts a free preview; the intended persistent live deployment is blocked as described above, so I am not presenting that part as complete.
+- **Best Use of Backboard:** actual open-weight model comparison and semantic compilation through Backboard.
+- **Best Use of Browserbase:** actual public reference reading supplies reviewed context to the compiler; browser journeys also verify the application.
 
-AI-assisted development disclosure: I directed the product and used OpenAI Codex to implement, test, and document it. The evaluation data and recorded contacts are synthetic. No private agent-session export or DevRelay upload was made.
+AI-assisted development disclosure: I directed the product and used OpenAI Codex to implement, test, and document it. All recorded contacts and evaluation fixtures are synthetic. No private agent-session export or DevRelay upload was made.

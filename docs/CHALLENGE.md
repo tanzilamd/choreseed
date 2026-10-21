@@ -6,6 +6,8 @@ Authoritative pages read on October 21, 2026:
 - [Week 3 contest rules](https://dev.to/page/hacktoberfest-week3-2026-10-19-contest-rules)
 - [General official rules](https://dev.to/page/official-hackathon-rules)
 
+The challenge and contest-rules pages were fetched again during final editorial review. The official template's headings and the deployed-link-or-video requirement were checked directly. The final article uses that template, omits the optional unshared agent-session section, identifies the real recording separately from the limited free preview, and names Backboard and Browserbase categories based on actual integration evidence.
+
 Entry window: October 19, 2026 at 9:00 AM PDT to October 25, 2026 at 11:59 PM PDT. In Asia/Dhaka: October 19 at 10:00 PM to October 26 at 12:59 PM. Repositories and projects must start and finish within that window. The initial repository commit is October 21, 2026 at 11:23:40 PM Asia/Dhaka, inside the window. Any post-deadline commits must be noted in the README.
 
 One entry per participant per challenge; teams up to four, with handles credited and one team submission. New projects with open-source AI at their core qualify; PRs to existing projects do not. Use the official DEV template and `devchallenge`, `hf26challenge` tags. A published entry needs a demo (deployed link or video), code, explanation of effort saved, and why open innovation matters. This task authorizes an **unpublished** DEV draft only. Draft creation does not enter the contest; public publication is a separate owner action.

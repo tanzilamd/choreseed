@@ -2,6 +2,8 @@
 
 Recording: `docs/assets/choreseed-demo.webm`, 85 seconds. It samples an actual 120-second automated synthetic journey, including real provider waits. The timing is condensed playback, not a human setup/review study. Exact scripted stage times and downloaded fictional outputs are retained in `docs/evidence/demo-journey.json`.
 
+The deployed home page provides a native video player and an expandable text transcript. Direct media URL: `https://choreseed.onrender.com/demo.webm`; the repository copy is the mirror. The fixed media route supports byte ranges for seeking. The video is silent with on-screen English explanations; it is not a recording of the paused public preview.
+
 | Approximate segment | Show | English narration/caption |
 | --- | --- | --- |
 | 0–8 s | Start page | “I collect advice faster than I apply it. Choreseed makes one small task leave behind a routine.” |

@@ -6,12 +6,12 @@
   "url": "https://choreseed.onrender.com",
   "auto_deploy": "off",
   "render_deployment_status": "live",
-  "source_commit": "185d4ea74d95c1206f3582247cd44b94c3569af4",
+  "source_commit": "663a960e782a99d4f2172a430827ae3cb0ea01eb",
   "paid_creation_rejected_http": 402,
-  "public_smoke": "passed: health/status, exact exports, save/replay, mobile, offline static replay; live-AI smoke not run",
+  "public_smoke": "passed: actual recording playback, transcript, exact exports, save/replay, mobile, offline static replay; live-AI smoke remains blocked",
   "live_ai_enabled": false,
   "runtime_keys": "both present; hosted live dispatch remains disabled",
-  "deployment_id": "dep-dbcgq7fb9u1s73beqpi0",
+  "deployment_id": "dep-dbch73t9fdbs73c3i1pg",
   "runtime_group_key_presence": {
     "BACKBOARD_API_KEY": true,
     "BROWSERBASE_API_KEY": true
@@ -22,5 +22,6 @@
   "browser_minutes_remaining_runtime_cap": 48,
   "owner_hosting_preference": "free",
   "free_database_api_http_status": 403,
-  "observed_at": "2026-10-21T19:09:03.857481+00:00"
+  "observed_at": "2026-10-21T19:36:44.530905+00:00",
+  "finished_at": "2026-10-21T19:34:31.717561Z"
 }

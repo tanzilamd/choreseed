@@ -12,7 +12,7 @@ The free preview is usable at [choreseed.onrender.com](https://choreseed.onrende
 
 The public check found a real build regression: formatting had separated the service worker's asset marker from the replacement pattern, leaving an empty precache. Commit `185d4ea74d95c1206f3582247cd44b94c3569af4` fixes injection, fails the build when the marker is absent, and strengthens browser cache assertions. Build/typecheck, all 22 deterministic/API/compiler/accounting tests, and all four local browser journeys passed after the fix. Public offline replay then passed on the new deployment. Earlier offline claims do not establish correctness of the intervening broken build; the failure and corrected public evidence are retained.
 
-Current Render deployment: `dep-dbcgq7fb9u1s73beqpi0`, reported live at 2026-10-21T19:06:46.05004Z; source commit above. One free web service, Singapore, no disk, automatic deploys off. Free web services may sleep and share the workspace's monthly free-hour allocation; availability is not guaranteed.
+Current Render deployment: `dep-dbch73t9fdbs73c3i1pg`, reported live at 2026-10-21T19:34:31.717561Z; source commit `663a960e782a99d4f2172a430827ae3cb0ea01eb`. One free web service, Singapore, no disk, automatic deploys off. Free web services may sleep and share the workspace's monthly free-hour allocation; availability is not guaranteed.
 
 ## Access, storage and spending
 
@@ -33,3 +33,11 @@ DEV draft `4891319` is updated in place with `published:false`; independent auth
 ## Remaining prerequisite for live AI
 
 A supported free persistent database must first be made accessible to this deployment. Because the provider's database API is blocked here, creating that account-owned resource through Render Dashboard or resolving the API block requires owner/provider access. It must use the free plan with no card/top-up; its expiry must be tracked. Technical follow-up would then implement and verify durable database accounting, actual hosted model/source calls, and public quota exhaustion/restart persistence before enabling generation. Until then, the free preview's local-routine capabilities above are ready; the entire original live-AI scope is not.
+
+## Final publication preparation
+
+The public home page now includes the verified 85-second real-integration video, a silent-video disclosure and a readable text transcript. The paused preview emphasizes the fictional sample as its primary action. The recording is served through fixed, range-capable public routes; its bytes match the repository artifact. No user-selected filesystem path is exposed.
+
+After this change, build/typecheck and all 22 unit/API/accounting tests passed. Five local browser journeys passed, including actual video decoding/playback and HTTP range checks. The deployed public journey also passed: video playback and transcript, independent exact CSV exports, save/replay, mobile layout, offline reload/replay, no API caching, and disabled paid controls. The final public journey sent zero compile requests. Media, poster, public source and MIT license links returned 200; media and license hashes matched local artifacts. No new inference or Browserbase session was used during this final presentation pass.
+
+The article has been edited to match the official submission template, foreground the confirmed research-fatigue story and reusable-routine behavior, and identify Backboard/Browserbase categories using actual evidence. It clearly distinguishes the recorded real creation workflow from the paused free public host. DEV draft 4891319 stays unpublished; final body/state read-back is recorded in DEV_DRAFT.json. See SUBMISSION.md for review links and deadline. This editorial package does not remove the outstanding live-AI storage prerequisite or certify personal eligibility.

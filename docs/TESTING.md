@@ -17,3 +17,5 @@ This spends real credits and keeps `.local/evaluation.sqlite` reservations. Do n
 Payoff evidence is deliberately narrow: a second compatible file uses zero new inference calls, including offline replay after static caching. No matched manual baseline, human review-time study, actual personal CSV routine, real-user quote, or time-saving percentage has been measured. Provider latency includes synthetic evaluation overhead and provider cleanup; it is not total user setup/review time. The demo script identifies its contacts as fictional.
 
 Production verification and recording status must be read from the delivery record. Local tests, real provider calls, Render deployment, public functional checks and DEV draft publication are distinct claims.
+
+The fifth browser journey checks the recorded demo: an HTTP 206 byte-range response, correct media type and byte length, actual browser decoding/playback of the 85-second video, and its visible text alternative. The player does not preload the full recording. Desktop/mobile axe checks also include the home page with the player and transcript.

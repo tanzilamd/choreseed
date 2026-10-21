@@ -4,7 +4,7 @@
 
 Built for the [Hacktoberfest Open-Source AI Challenge, Week 3: Slow and Steady](https://dev.to/challenges/hacktoberfest-week3-2026-10-19). This is an early release, not a general spreadsheet or arbitrary-code agent. All demo contacts are fictional.
 
-[Free public preview](https://choreseed.onrender.com) · [85-second real-integration recording](docs/assets/choreseed-demo.webm) · [Delivery status](docs/DELIVERY.md)
+[Free public preview](https://choreseed.onrender.com) · [Watch the 85-second real-integration recording](https://choreseed.onrender.com/demo.webm) ([mirror](docs/assets/choreseed-demo.webm)) · [Delivery status](docs/DELIVERY.md)
 
 **The free preview is usable for the fictional sample, editing, CSV export, recipe import/save and compatible-file replay, including offline replay after caching.** Public browser checks verified exact downloads and zero repeat inference. Live AI remains paused because durable usage storage is unavailable: paid hosting requires payment information, and the free database provisioning API is blocked. Runtime keys are present. See the [delivery record](docs/DELIVERY.md) for the distinction between this usable free preview and full live-AI production acceptance.
 

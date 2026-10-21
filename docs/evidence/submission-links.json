@@ -1,0 +1,35 @@
+{
+  "observed_at": "2026-10-21T19:35:40.348681+00:00",
+  "checks": {
+    "video": {
+      "url": "https://choreseed.onrender.com/demo.webm",
+      "http_status": 200,
+      "content_type": "video/webm",
+      "bytes": 1343070,
+      "sha256": "3ae21a5276b6f04004fa2c312cdfc98e192c75a650e9f63c1c931401ef9d9c73",
+      "matches_repository": true
+    },
+    "poster": {
+      "url": "https://choreseed.onrender.com/demo-poster.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "bytes": 126942,
+      "sha256": "7aaa6ac2029295aa5e6601473ee4f9e56a2e742885d7df1f48e82a958e03d222",
+      "matches_repository": true
+    },
+    "code": {
+      "url": "https://github.com/tanzilamd/choreseed",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 293542
+    },
+    "license": {
+      "url": "https://raw.githubusercontent.com/tanzilamd/choreseed/main/LICENSE",
+      "http_status": 200,
+      "content_type": "text/plain; charset=utf-8",
+      "bytes": 1069,
+      "sha256": "4c6cc497cd2acc8a136432a050b81ac11ac0a6962453606b0f75ee2c7be053fe",
+      "matches_repository": true
+    }
+  }
+}

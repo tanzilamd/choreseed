@@ -1,8 +1,13 @@
 {
-  "observed_at": "2026-10-21T19:07:08.147880+00:00",
+  "observed_at": "2026-10-21T19:35:38.976970+00:00",
   "url": "https://choreseed.onrender.com",
   "mode": "public paused preview; no live AI claims",
   "checks": {
+    "real_recording_playback": {
+      "duration": 85,
+      "width": 1280
+    },
+    "text_transcript_visible": true,
     "first_export_matches_independent_expected_bytes": true,
     "edited_preview_save_and_reordered_second_file_exact_export": true,
     "mobile_no_page_overflow": true,
@@ -13,8 +18,8 @@
     "/",
     "/icon.svg",
     "/assets/csv.worker-BMp_GAaP.js",
-    "/assets/index-BVC8KBAy.js",
-    "/assets/index-Dbrfwbh4.css"
+    "/assets/index-CtWmA2bz.js",
+    "/assets/index-DlzXeEa3.css"
   ],
   "compile_requests": 0,
   "result": "passed"

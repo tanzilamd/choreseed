@@ -1,10 +1,10 @@
 {
-  "observedAt": "2026-10-21T19:05:25.596Z",
+  "observedAt": "2026-10-21T19:32:30.093Z",
   "runner": "Playwright + system Chromium; fictional fixtures and mocked AI routes",
   "stats": {
-    "startTime": "2026-10-21T19:05:25.596Z",
-    "duration": 7090.224,
-    "expected": 4,
+    "startTime": "2026-10-21T19:32:30.093Z",
+    "duration": 8808.772,
+    "expected": 5,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
@@ -23,6 +23,8 @@
     "no horizontal page overflow",
     "schema recovery",
     "untrusted cell text rendering",
-    "cached root document and worker asset present after production build"
-  ]
+    "cached root document and worker asset present after production build",
+    "real recording range response, video decoding/playback, and text alternative"
+  ],
+  "source_commit": "663a960e782a99d4f2172a430827ae3cb0ea01eb"
 }
