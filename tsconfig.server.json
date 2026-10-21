@@ -1,5 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {"noEmit": false, "outDir": "dist/server", "rootDir": "src"},
-  "include": ["src"], "exclude": ["src/**/*.worker.ts"]
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "dist/server",
+    "rootDir": "src"
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.worker.ts"]
 }
