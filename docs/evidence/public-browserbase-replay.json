@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-21T18:59:31.081973+00:00",
+  "reserved_browser_minutes": 1,
+  "purpose": "public paused-preview Browserbase journey; no model calls",
+  "checks": {
+    "sample_edit_save_reordered_second_file_replay": true
+  },
+  "browser_minutes_before": 9,
+  "compile_requests": 0,
+  "result": "passed",
+  "release_status": "COMPLETED",
+  "browser_minutes_after": 10,
+  "elapsed_seconds": 11.473
+}

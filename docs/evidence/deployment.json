@@ -6,16 +6,21 @@
   "url": "https://choreseed.onrender.com",
   "auto_deploy": "off",
   "render_deployment_status": "live",
-  "source_commit": "1868c1e18b4cfa9196b26a935b7bf15919e0b4ef",
+  "source_commit": "185d4ea74d95c1206f3582247cd44b94c3569af4",
   "paid_creation_rejected_http": 402,
-  "public_smoke": "blocked by managed egress; exact hostname saved in draft but not applied",
+  "public_smoke": "passed: health/status, exact exports, save/replay, mobile, offline static replay; live-AI smoke not run",
   "live_ai_enabled": false,
-  "runtime_keys": "owner provisioning pending",
-  "deployment_id": "dep-dbcgf5o473hc738tnen0",
+  "runtime_keys": "both present; hosted live dispatch remains disabled",
+  "deployment_id": "dep-dbcgq7fb9u1s73beqpi0",
   "runtime_group_key_presence": {
-    "BACKBOARD_API_KEY": false,
-    "BROWSERBASE_API_KEY": false
+    "BACKBOARD_API_KEY": true,
+    "BROWSERBASE_API_KEY": true
   },
-  "active_cloud_spec_revision": "3",
-  "deployment_host_in_active_policy": false
+  "active_cloud_spec_revision": "4",
+  "deployment_host_in_active_policy": true,
+  "browser_minutes_used": 12,
+  "browser_minutes_remaining_runtime_cap": 48,
+  "owner_hosting_preference": "free",
+  "free_database_api_http_status": 403,
+  "observed_at": "2026-10-21T19:09:03.857481+00:00"
 }

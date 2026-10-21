@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-10-21T19:04:12.364874+00:00",
+  "url": "https://choreseed.onrender.com",
+  "mode": "public paused preview; no live AI claims",
+  "checks": {
+    "first_export_matches_independent_expected_bytes": true,
+    "edited_preview_save_and_reordered_second_file_exact_export": true,
+    "mobile_no_page_overflow": true
+  },
+  "result": "failed",
+  "error_type": "Error",
+  "error": "Page.reload: net::ERR_INTERNET_DISCONNECTED\nCall log:\n  - waiting for navigation until \"load\"\n"
+}

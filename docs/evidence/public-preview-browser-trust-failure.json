@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-21T18:57:55.829307+00:00",
+  "url": "https://choreseed.onrender.com",
+  "mode": "public paused preview; no live AI claims",
+  "checks": {},
+  "result": "failed",
+  "error_type": "Error",
+  "error": "Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://choreseed.onrender.com/\nCall log:\n  - navigating to \"https://choreseed.onrender.com/\", waiting until \"networkidle\"\n"
+}

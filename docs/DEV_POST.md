@@ -1,6 +1,6 @@
 *This is a submission draft for the [Hacktoberfest Open-Source AI Challenge Week 3: Slow and Steady](https://dev.to/challenges/hacktoberfest-week3-2026-10-19).*
 
-> Delivery note before publication: Render reports the free preview deployed. Its intended capabilities are the fictional sample and local replay; live generation is deliberately paused. Public functional verification is still pending because this cloud machine's egress policy has not applied the newly saved deployment hostname. Real hosted-model compilation and Browserbase reading were verified in the development instance and recorded below. A paid persistent Render service returned HTTP 402 requiring payment information, despite available account credit; I have not added a card or enabled paid inference on ephemeral storage. This article is an unpublished draft, not a claim that full production acceptance is complete.
+> Delivery note before publication: The free public preview supports the fictional sample, editable rehearsal, exact CSV export, browser-local save, and replay with a second compatible file. These public interactions have been checked, including through Browserbase. Live generation remains paused: Render's paid persistent service requires payment information (HTTP 402), and the free Postgres provisioning API is blocked by Cloudflare (HTTP 403). Runtime keys are present in the dedicated environment group. No card was added and paid inference was not enabled on ephemeral storage. This remains an unpublished draft; full live production acceptance is incomplete.
 
 ## What I Built
 
@@ -16,7 +16,7 @@ The contacts in the demo are fictional. My research fatigue is the real starting
 
 ## Demo
 
-- [Free public preview deployment](https://choreseed.onrender.com) — public functional verification pending; live AI is paused pending persistent hosting and runtime credentials.
+- [Free public preview](https://choreseed.onrender.com) — sample, editing, export, save, and replay checked publicly; live AI awaits persistent usage storage. Free hosting can sleep between visits.
 - [85-second recorded real-integration demonstration](https://github.com/tanzilamd/choreseed/blob/main/docs/assets/choreseed-demo.webm).
 
 The recording uses the local development app, real Backboard inference, and real Browserbase reading. It condenses a roughly two-minute automated fictional journey into sampled playback; it is not a real-time human usability measurement.
@@ -77,7 +77,7 @@ That is the tested offline capability: **cached app plus saved recipe plus compa
 
 ## The Lazy Payoff
 
-The strongest measurement is a count: **zero new inference calls on the second file**. The recorded journey checked that count, and both downloaded files matched independent expected rows. Browser tests also replayed a saved routine after an offline reload and verified that API responses were absent from the static cache.
+The strongest measurement is a count: **zero new inference calls on the second file**. The recorded journey checked that count, and both downloaded files matched independent expected rows. Public preview downloads also matched independent expected CSV bytes. Public browser checks replayed a saved routine after an offline reload and verified that API responses were absent from the static cache. That final public check caught a build-marker formatting bug that left the worker's asset list empty; I fixed the build injection, made a missing marker fail the build, redeployed, and reran the actual public journey successfully.
 
 The build has deterministic/API/accounting tests, separate browser journeys, and real-provider evaluation records. The real semantic cases include English contact cleanup, Bangla trim/case instructions, ambiguous duplicates, unsupported requests, hostile notes, and conflicting guidance. Failures and the targeted correction remain in the evidence.
 

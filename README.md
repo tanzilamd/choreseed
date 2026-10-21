@@ -6,7 +6,7 @@ Built for the [Hacktoberfest Open-Source AI Challenge, Week 3: Slow and Steady](
 
 [Free public preview](https://choreseed.onrender.com) · [85-second real-integration recording](docs/assets/choreseed-demo.webm) · [Delivery status](docs/DELIVERY.md)
 
-**Live AI is deliberately paused in the free preview.** Paid persistent Render hosting returned HTTP 402 requiring payment information; the owner's no-new-card constraint is preserved. Local real-provider creation and browser-local replay are verified. Full public production acceptance remains blocked; see the delivery record.
+**The free preview is usable for the fictional sample, editing, CSV export, recipe import/save and compatible-file replay, including offline replay after caching.** Public browser checks verified exact downloads and zero repeat inference. Live AI remains paused because durable usage storage is unavailable: paid hosting requires payment information, and the free database provisioning API is blocked. Runtime keys are present. See the [delivery record](docs/DELIVERY.md) for the distinction between this usable free preview and full live-AI production acceptance.
 
 ## What works
 

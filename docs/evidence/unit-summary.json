@@ -5,5 +5,7 @@
   "passed": 22,
   "failed": 0,
   "skipped": 0,
-  "description": "Actual Node test runner completion; independent deterministic, API mocks, compiler validation and persistent accounting fixtures."
+  "description": "Actual Node test runner completion; independent deterministic, API mocks, compiler validation and persistent accounting fixtures.",
+  "observed_at": "2026-10-21T19:07:09.491169+00:00",
+  "source_commit": "185d4ea74d95c1206f3582247cd44b94c3569af4"
 }

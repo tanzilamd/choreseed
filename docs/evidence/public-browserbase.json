@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-21T19:03:24.568688+00:00",
+  "reserved_browser_minutes": 1,
+  "purpose": "public paused-preview Browserbase journey; no model calls",
+  "checks": {
+    "first_csv_export_independent_expected_bytes": true,
+    "second_csv_export_independent_expected_bytes": true,
+    "sample_edit_save_reordered_second_file_replay": true,
+    "mobile_no_page_overflow": true
+  },
+  "browser_minutes_before": 11,
+  "result": "failed_or_uncertain",
+  "error_type": "Error",
+  "safe_error": "Page.reload: net::ERR_INTERNET_DISCONNECTED\n",
+  "release_status": "COMPLETED",
+  "browser_minutes_after": 12,
+  "elapsed_seconds": 23.283
+}

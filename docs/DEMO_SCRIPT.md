@@ -12,6 +12,6 @@ Recording: `docs/assets/choreseed-demo.webm`, 85 seconds. It samples an actual 1
 | 65–75 s | Download and explicit local save | “Keep the original. Download a new CSV and save the portable routine.” |
 | 75–85 s | Second file with reordered columns, replay | “Next file, same routine. No new prompt or inference. Offline replay works after the app is cached.” |
 
-Recording currently demonstrates the local app with real hosted integrations. The public Render preview deliberately pauses live AI until persistent hosting and actual runtime keys are available. Do not relabel the recording as a public production smoke test.
+Recording demonstrates the local app with real hosted integrations. The public Render preview deliberately pauses live AI until persistent usage storage is available; runtime key presence is verified. Separate public-browser evidence covers the free preview. Do not relabel the recording as a public live-AI production smoke test.
 
 Screenshots: `start-desktop.png`, `workbench-desktop.png`, `workbench-mobile.png`. The overlay explicitly identifies the synthetic demonstration. The original recording script is opt-in, invokes real paid APIs, and must not be rerun without checking the remaining preflight budget and existing ledger.

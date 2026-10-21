@@ -1,0 +1,68 @@
+{
+  "observed_at": "2026-10-21T19:07:38.526799+00:00",
+  "scope": "free web-service restart availability only; not durable live-AI quota persistence",
+  "before": {
+    "liveConfigured": false,
+    "livePauseReason": "Live generation is paused until persistent hosting is available. The fictional sample and saved routines still work.",
+    "model": {
+      "id": "qwen/qwen3.5-35b-a3b",
+      "provider": "openrouter",
+      "upstream": "deepinfra/fp8"
+    },
+    "supportedHosts": [
+      "docs.python.org",
+      "developer.mozilla.org",
+      "support.microsoft.com",
+      "support.google.com",
+      "www.freecodecamp.org"
+    ],
+    "aiAllocatedUsd": 4,
+    "aiAccountedUsd": 0,
+    "browserAllocatedMinutes": 48,
+    "browserAccountedMinutes": 0,
+    "accountingPaused": false,
+    "limits": {
+      "sessionAttemptsPerDay": 3,
+      "ipAttemptsPerHour": 3,
+      "concurrentInference": 1
+    }
+  },
+  "restart_http_status": 200,
+  "restart_response": {},
+  "health_after": {
+    "http_status": 200,
+    "data": {
+      "ok": true,
+      "app": "choreseed"
+    }
+  },
+  "after": {
+    "liveConfigured": false,
+    "livePauseReason": "Live generation is paused until persistent hosting is available. The fictional sample and saved routines still work.",
+    "model": {
+      "id": "qwen/qwen3.5-35b-a3b",
+      "provider": "openrouter",
+      "upstream": "deepinfra/fp8"
+    },
+    "supportedHosts": [
+      "docs.python.org",
+      "developer.mozilla.org",
+      "support.microsoft.com",
+      "support.google.com",
+      "www.freecodecamp.org"
+    ],
+    "aiAllocatedUsd": 4,
+    "aiAccountedUsd": 0,
+    "browserAllocatedMinutes": 48,
+    "browserAccountedMinutes": 0,
+    "accountingPaused": false,
+    "limits": {
+      "sessionAttemptsPerDay": 3,
+      "ipAttemptsPerHour": 3,
+      "concurrentInference": 1
+    }
+  },
+  "checked_after_at": "2026-10-21T19:08:22.545536+00:00",
+  "availability_result": "passed",
+  "persistent_live_quota_result": "not tested: live AI disabled and free filesystem ephemeral"
+}

@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-10-21T19:02:38.973876+00:00",
+  "reserved_browser_minutes": 1,
+  "purpose": "public paused-preview Browserbase journey; no model calls",
+  "checks": {},
+  "browser_minutes_before": 10,
+  "result": "failed_or_uncertain",
+  "error_type": "AssertionError",
+  "safe_error": "First CSV bytes differ from independent expected rows",
+  "release_status": "COMPLETED",
+  "browser_minutes_after": 11,
+  "elapsed_seconds": 8.838
+}

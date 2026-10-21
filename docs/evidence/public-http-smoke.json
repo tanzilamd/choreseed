@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-10-21T19:09:53.213122+00:00",
+  "checks": {
+    "/healthz": {
+      "http_status": 200,
+      "data": {
+        "ok": true,
+        "app": "choreseed"
+      },
+      "cache_control": "no-store"
+    },
+    "/api/status": {
+      "http_status": 200,
+      "data": {
+        "liveConfigured": false,
+        "livePauseReason": "Live generation is paused until persistent hosting is available. The fictional sample and saved routines still work.",
+        "model": {
+          "id": "qwen/qwen3.5-35b-a3b",
+          "provider": "openrouter",
+          "upstream": "deepinfra/fp8"
+        },
+        "supportedHosts": [
+          "docs.python.org",
+          "developer.mozilla.org",
+          "support.microsoft.com",
+          "support.google.com",
+          "www.freecodecamp.org"
+        ],
+        "aiAllocatedUsd": 4,
+        "aiAccountedUsd": 0,
+        "browserAllocatedMinutes": 48,
+        "browserAccountedMinutes": 0,
+        "accountingPaused": false,
+        "limits": {
+          "sessionAttemptsPerDay": 3,
+          "ipAttemptsPerHour": 3,
+          "concurrentInference": 1
+        }
+      },
+      "cache_control": "no-store"
+    },
+    "/api/recipes/compile": {
+      "http_status": 503,
+      "data": {
+        "error": "Live AI is paused until persistent hosting is available. Use the fictional sample or a saved routine.",
+        "code": "not_configured"
+      },
+      "cache_control": "no-store"
+    },
+    "/api/sources/read": {
+      "http_status": 503,
+      "data": {
+        "error": "Public browser reading is paused until persistent hosting is available. Paste relevant notes instead.",
+        "code": "not_configured"
+      },
+      "cache_control": "no-store"
+    },
+    "/api/recipes/compile cross-origin": {
+      "http_status": 403,
+      "data": {
+        "error": "Open Choreseed in its own tab and try again.",
+        "code": "origin"
+      },
+      "cache_control": "no-store"
+    }
+  }
+}

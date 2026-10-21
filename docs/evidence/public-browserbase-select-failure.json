@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-10-21T18:59:05.425976+00:00",
+  "reserved_browser_minutes": 1,
+  "purpose": "public paused-preview Browserbase journey; no model calls",
+  "checks": {},
+  "browser_minutes_before": 8,
+  "result": "failed_or_uncertain",
+  "error_type": "Error",
+  "safe_error": "Locator.select_option: Error: strict mode violation: get_by_label(\"Step 3 operation\") resolved to 2 elements:\n    1) <span tabindex=\"0\" role=\"combobox\" aria-expanded=\"false\" aria-autocomplete=\"list\" class=\"bb-custom-select-opener\" aria-owns=\"bb-customSelect-doKka-panel\" aria-labelledby=\"bb-customSelect-doKka-label\" aria-activedescendant=\"bb-customSelect-doKka-selectedOption\">\u2026</span> aka get_by_label(\"Step 3 operation\").first\n    2) <select id=\"type-2\" tabindex=\"-1\">\u2026</select> aka locator(\"#type-2\")\n\n    at createStacklessError\n    at strictModeViolationError\n    at callMatchedElements\n    at evaluate\n    at \n",
+  "release_status": "COMPLETED",
+  "browser_minutes_after": 9,
+  "elapsed_seconds": 6.922
+}
